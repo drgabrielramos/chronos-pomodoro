@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { PlayCircleIcon } from 'lucide-react'
+import { Container } from './components/Container'
+import { CountDown } from './components/CountDown'
+import { Cycles } from './components/Cycles'
+import { DefaultButton } from './components/DefaultButton'
+import { DefaultInput } from './components/DefaultInput'
+import { Heading } from './components/Heading'
+import { Logo } from './components/Logo'
+import { Menu } from './components/Menu'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
+import './styles/global.css'
+import './styles/theme.css'
+import { Footer } from './components/Footer'
+
+export function App() {
+    return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+        <Container>
+                <Heading>
+                    <Logo/>
+                </Heading>
+        </Container>
+        
+        <Container>
+                <Menu/>
+        </Container>
 
-export default App
+        <Container>
+                <CountDown/>
+        </Container>
+
+        <Container>
+                <form className='form' action="">
+                    <div className='formRow'>
+                        <DefaultInput 
+                        labelText='Task'
+                        id = 'meuId' 
+                        type = 'text'
+                        placeholder='digite algo' 
+                        />
+                    </div>
+
+                    <div className='formRow'>
+                        <p>
+                            Lorem ipsum dolor sit amet.
+                        </p>
+                    </div>
+
+                    <div className='formRow'>
+                        <Cycles/>
+                    </div>
+
+                    <div className='formRow'>
+                        <DefaultButton icon = {<PlayCircleIcon/>}/>
+                    </div>
+                </form>
+        </Container>
+
+        <Container>
+                <Footer/>
+        </Container>
+    </>
+    );
+}
