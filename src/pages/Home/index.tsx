@@ -4,10 +4,11 @@ import { MainForm } from "../../components/Mainform";
 import { Container } from "../../components/Container";
 
 export function Home() {
+
     return (
         <MainTemplate>
             <Container>
-                <CountDown/>
+                <CountDown />
             </Container>
         
             <Container>
